@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-const api_key = import.meta.env.VITE_SOME_KEY;
+const apiKey = import.meta.env.VITE_SOME_KEY;
 const App = () => {
   const [allNames, setAllNames] = useState([]);
   const [display, setDisplay] = useState([]);
@@ -41,7 +41,7 @@ const App = () => {
   const fetchWeatherData = async (capital) => {
     try {
       const response = await axios.get(
-        `http://api.weatherapi.com/v1/current.json?key=08de619fb7884c2bba862540232012&q=${capital}&aqi=no`
+        `http://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${capital}&aqi=no`
       );
       setWeatherData(response.data);
     } catch (error) {
